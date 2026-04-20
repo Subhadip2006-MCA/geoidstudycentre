@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | GEOID STUDY CENTRE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0a3d62;
+      --secondary: #ffd32a;
+      --accent: #00b4d8;
+      --text-dark: #2d3436;
+      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body { background: #f0f2f5; color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+
+    /* --- HEADER --- */
+    header {
+      background: rgba(10, 61, 98, 0.95);
+      backdrop-filter: blur(12px);
+      color: white;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      box-shadow: var(--shadow);
+    }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-area img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--secondary); }
+    .logo-area h1 { font-size: 1.3rem; font-weight: 700; }
+
+    nav ul { display: flex; gap: 20px; list-style: none; }
+    nav ul li a { color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; transition: 0.3s; }
+    nav ul li a:hover { color: var(--secondary); }
+    .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+    /* --- LIVE UPDATE BAR --- */
+    .update-status-bar { background: #fff; border-bottom: 1px solid #eee; padding: 8px 5%; font-size: 0.85rem; color: #555; }
+    .update-container { display: flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .live-indicator { color: #2ed573; font-weight: 700; display: flex; align-items: center; gap: 5px; }
+    .pulse { width: 8px; height: 8px; background: #2ed573; border-radius: 50%; animation: pulse-animation 2s infinite; }
+    @keyframes pulse-animation {
+      0% { box-shadow: 0 0 0 0px rgba(46, 213, 115, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(46, 213, 115, 0); }
+      100% { box-shadow: 0 0 0 0px rgba(46, 213, 115, 0); }
+    }
+
+    /* --- HERO MINI --- */
+    .hero-mini {
+      height: 30vh;
+      background: linear-gradient(rgba(10,61,98,0.8), rgba(10,61,98,0.8)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80') center/cover;
+      display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;
+    }
+    .hero-mini h2 { font-size: 2.5rem; letter-spacing: 1px; }
+
+    /* --- POLICY CARD --- */
+    .content-section { padding: 60px 10%; display: flex; justify-content: center; }
+    .policy-card {
+      background: white;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      max-width: 900px;
+      width: 100%;
+      border-top: 5px solid var(--secondary);
+    }
+    .policy-card h3 { color: var(--primary); margin-top: 30px; margin-bottom: 15px; font-size: 1.4rem; border-left: 4px solid var(--secondary); padding-left: 15px; }
+    .policy-card p { margin-bottom: 20px; color: #444; text-align: justify; line-height: 1.8; }
+    .back-home {
+      display: inline-block;
+      margin-top: 30px;
+      background: var(--primary);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .back-home:hover { background: var(--secondary); color: var(--primary); transform: translateX(-5px); }
+
+    /* --- FOOTER --- */
+    footer { background: #051929; color: #a4b0be; padding: 40px 10% 20px; font-size: 0.85rem; text-align: center; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+    .dev-link { color: var(--secondary) !important; font-weight: 600; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .content-section { padding: 40px 5%; }
+      .policy-card { padding: 30px; }
+      nav ul { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--primary); flex-direction: column; padding: 20px; }
+      nav.active ul { display: flex; }
+      .menu-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="https://deliberate-amber-gfvdqe4djb.edgeone.app/logo.jpg" alt="Logo">
+    <h1>GEOID</h1>
+  </div>
+  <div class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></div>
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notice.html">Notice</a></li>
+      <li><a href="course.html">Courses</a></li>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="update-status-bar">
+  <div class="update-container">
+    <span class="live-indicator"><span class="pulse"></span> LIVE UPDATES</span>
+    <span class="update-text">
+      Current Date: <strong id="current-date"></strong> | Last Sync: <strong id="current-time"></strong>
+    </span>
+  </div>
+</div>
+
+<section class="hero-mini">
+  <h2>Privacy Policy</h2>
+  <p>Your Data Safety is Our Priority</p>
+</section>
+
+<section class="content-section">
+  <div class="policy-card">
+    <p>At <strong>GEOID STUDY CENTRE</strong>, we are committed to protecting your personal information and maintaining transparency about how your data is collected and used.</p>
+
+    <h3>1. Information We Collect</h3>
+    <p>We collect personal details such as your name, email, contact information, and academic records when you enroll or interact with our website to provide a better learning experience.</p>
+
+    <h3>2. How We Use Your Information</h3>
+    <p>We use your information to manage admissions, provide regular updates, and improve our services. Your data is strictly used for educational purposes and is never sold to third parties.</p>
+
+    <h3>3. Cookies and Analytics</h3>
+    <p>Our website uses cookies to optimize user experience and analyze site traffic. You can choose to disable cookies through your browser settings if you prefer.</p>
+
+    <h3>4. Data Security</h3>
+    <p>We apply advanced security protocols and encryption to protect your data from unauthorized access, ensuring that your personal details remain confidential.</p>
+
+    <h3>5. Policy Updates</h3>
+    <p>Our privacy policy may be revised periodically to stay updated with new regulations. Any changes will be posted on this page immediately.</p>
+
+    <h3>6. Contact Us</h3>
+    <p>If you have any questions regarding your privacy, please reach us at <strong>geoidstudycentre@gmail.com</strong>.</p>
+    
+    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <p>&copy; 2026 GEOID STUDY CENTRE. All rights reserved.</p>
+    <p>Developed By: <a href="#" class="dev-link">Subhadip Satpati</a></p>
+  </div>
+</footer>
+
+<script>
+  // Navigation Toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const navMenu = document.getElementById('nav-menu');
+  menuBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+  // Live Date & Time Script
+  function updateDateTime() {
+    const now = new Date();
+    const dateOptions = { day: 'numeric', month: 'long', year: 'numeric' };
+    
+    document.getElementById('current-date').textContent = now.toLocaleDateString('en-GB', dateOptions);
+    document.getElementById('current-time').textContent = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  }
+
+  setInterval(updateDateTime, 1000);
+  updateDateTime();
+</script>
+
+</body>
+</html>
