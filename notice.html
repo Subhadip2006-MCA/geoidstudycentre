@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notices | GEOID STUDY CENTRE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0a3d62;
+      --secondary: #ffd32a;
+      --accent: #00b4d8;
+      --text-dark: #2d3436;
+      --text-light: #f5f6fa;
+      --glass: rgba(255, 255, 255, 0.1);
+      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body { background: #f0f2f5; color: var(--text-dark); line-height: 1.6; }
+
+    /* --- HEADER (Same as Home) --- */
+    header {
+      background: rgba(10, 61, 98, 0.95);
+      backdrop-filter: blur(12px);
+      color: white;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      box-shadow: var(--shadow);
+    }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-area img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--secondary); }
+    .logo-area h1 { font-size: 1.4rem; letter-spacing: 1px; font-weight: 700; }
+
+    nav ul { display: flex; gap: 25px; list-style: none; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase; }
+    nav ul li a:hover { color: var(--secondary); }
+    .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+    /* --- NOTICE PAGE SPECIFIC --- */
+    .notice-hero {
+        background: var(--primary);
+        color: white;
+        padding: 60px 5%;
+        text-align: center;
+    }
+    .notice-hero h2 { font-size: 2.5rem; font-family: 'Noto Serif Bengali', serif; }
+
+    .notice-container { padding: 50px 10%; min-height: 60vh; }
+    
+    .notice-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .notice-item {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        transition: 0.3s;
+        border-left: 5px solid var(--accent);
+    }
+    .notice-item:hover { transform: scale(1.02); }
+
+    .date-box {
+        background: var(--primary);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        min-width: 80px;
+        text-align: center;
+    }
+    .date-box span { display: block; }
+    .date-box .day { font-size: 1.5rem; font-weight: 700; }
+    .date-box .month { font-size: 0.8rem; text-transform: uppercase; }
+
+    .notice-info h3 { color: var(--primary); margin-bottom: 5px; font-size: 1.1rem; }
+    .notice-info p { font-size: 0.9rem; color: #666; }
+    
+    .btn-download {
+        margin-left: auto;
+        background: var(--secondary);
+        color: var(--primary);
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: 0.3s;
+    }
+    .btn-download:hover { background: var(--primary); color: white; }
+
+    .new-tag {
+        background: #ff4757;
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+
+    /* --- FOOTER (Same as Home) --- */
+    footer { background: #051929; color: #a4b0be; padding: 60px 10% 20px; font-size: 0.9rem; margin-top: 50px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { color: white; margin-bottom: 25px; font-size: 1.2rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 12px; }
+    .footer-col a { color: #a4b0be; text-decoration: none; transition: 0.3s; }
+    .footer-col a:hover { color: var(--secondary); padding-left: 5px; }
+    .social-links { display: flex; gap: 15px; margin-top: 20px; }
+    .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; transition: 0.3s; }
+    .social-links a:hover { background: var(--secondary); color: var(--primary); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; text-align: center; }
+    .dev-link { color: var(--secondary) !important; font-weight: 600; text-decoration: underline !important; }
+
+    @media (max-width: 768px) {
+        .notice-item { flex-direction: column; text-align: center; }
+        .btn-download { margin-left: 0; width: 100%; }
+        header { padding: 15px 20px; }
+        nav ul { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--primary); flex-direction: column; padding: 20px; }
+        nav.active ul { display: flex; }
+        .menu-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="https://deliberate-amber-gfvdqe4djb.edgeone.app/logo.jpg" alt="Logo">
+    <h1>GEOID STUDY CENTRE</h1>
+  </div>
+  <div class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></div>
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notice.html" style="color: var(--secondary);">Notice</a></li>
+      <li><a href="portal.html">Portal</a></li>
+      <li><a href="course.html">Courses</a></li>
+      <li><a href="ourteam.html">Technical Team</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="notice-hero">
+    <h2>নোটিশ বোর্ড (Notice Board)</h2>
+    <p>Stay updated with the latest announcements and schedules.</p>
+</section>
+
+<div class="notice-container">
+    <div class="notice-list">
+        
+        <div class="notice-item">
+            <div class="date-box">
+                <span class="day">22</span>
+                <span class="month">Apr</span>
+            </div>
+            <div class="notice-info">
+                <h3>Upcoming Mock Test - Class 10 <span class="new-tag">New</span></h3>
+                <p>Geography chapter 1 & 2 special evaluation test.</p>
+            </div>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> PDF</a>
+        </div>
+
+        <div class="notice-item">
+            <div class="date-box">
+                <span class="day">15</span>
+                <span class="month">Apr</span>
+            </div>
+            <div class="notice-info">
+                <h3>Holiday Announcement</h3>
+                <p>Centre will remain closed on account of Bengali New Year.</p>
+            </div>
+            <a href="#" class="btn-download"><i class="fas fa-eye"></i> View</a>
+        </div>
+
+        <div class="notice-item">
+            <div class="date-box">
+                <span class="day">10</span>
+                <span class="month">Apr</span>
+            </div>
+            <div class="notice-info">
+                <h3>HS Practical Class Schedule</h3>
+                <p>Revised time table for Class 12 Geography Practicals.</p>
+            </div>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> PDF</a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>GEOID Study Centre</h4>
+      <p>Building a brighter future through conceptual learning and geographical excellence.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="notice.html">Latest Notices</a></li>
+        <li><a href="studentportal.html">Student Login</a></li>
+        <li><a href="course.html">Our Courses</a></li>
+        <li><a href="register.html">Online Admission</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+        <li><a href="retuntpolicy.html">Refund Policy</a></li>
+        <li><a href="#contact">Help Desk</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Reach Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Contai, Central Bus Stand, Purba Medinipur, 721401</p>
+      <p><i class="fas fa-phone"></i> +91 8207084112</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 GEOID STUDY CENTRE. All rights reserved.</p>
+    <p>Website Developed By: <a href="https://subhadipcyber.github.io" class="dev-link" target="_blank">SCT Cyber Tech</a></p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const navMenu = document.getElementById('nav-menu');
+  menuBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
+</script>
+
+</body>
+</html>
